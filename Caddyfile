@@ -1,0 +1,4 @@
+:9280 {
+    root * /Users/howard/code_base/sch_c/html-si
+    file_server browse
+}
