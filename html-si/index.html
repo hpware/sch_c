@@ -1,20 +1,30 @@
+<!--SPA by yh-->
 <html>
   <head>
     <title>idk yet</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   </head>
   <body>
-    <div class="min-h-12 fixed z-50 inset-x-0 flex flex-row justify-between text-center border transition-all duration-300 z-50" id="navbar">
-        <div>
-            <span class="p-1">idk</span>
-        </div>
-        <div>
-            <a href="https://github.com/hpware/sch_c" class="p-1">Source code</a>
-        </div>
+    <noscript>Sorry, but this website requires you to turn on javascript in order to load the CSS, animations and content.</noscript>
+    <div
+      class="min-h-12 fixed z-50 inset-x-0 flex flex-row justify-between text-center border transition-all duration-300 z-50"
+      id="navbar"
+    >
+      <div id="nav_title">
+        <span class="p-1">Default Text</span>
+      </div>
+      <div id="nav_links">
+        <a href="https://github.com/hpware/sch_c" class="p-1">Source code</a>
+      </div>
     </div>
-    <div class="pt-12">
+    <div class="pt-12 min-h-screen">
+      <div class="absolute inset-0 justify-center text-center min-h-screen flex flex-col">
+        <span class="text-4xl text-bold">Hi!</span>
+      </div>
+      <div class="min-h-screen"></div>
       <div id="displayData"></div>
       <div>Hi</div>
       <div>Hi</div>
@@ -52,28 +62,24 @@
       <div>Hi</div>
       <div>Hi</div>
     </div>
-        <script>  
-            const dataDisplay = document.getElementById("displayData");
-    
-    const navbar = document.getElementById("navbar");
-    const defaultNavBarClasses = "min-h-12 fixed z-50 inset-x-0 flex flex-row justify-between rounded text-center border transition-all duration-300 z-50";
-    document.addEventListener("DOMContentLoaded", (event) => {
-      getDataFromGithub();
-      handleScroll();
-      window.addEventListener("scroll", handleScroll);
-    })
-    function handleScroll() {
-      if (window.scrollY > 10) {
-        navbar.className = `${defaultNavBarClasses} mt-5 rounded-2xl mx-7 shadow border-gray-300/30 p-2 backdrop-blur-lg`
-      } else {
-        navbar.className = `${defaultNavBarClasses} mt-0 p-4 rounded-xl border-gray-300/0`
+    <footer id="footer" class="grid"></footer>
+    <!--js-->
+        <!--providing navbar js-->
+    <script src="/assets/navbar.js"></script>
+    <!--providing the footer data-->
+    <script src="/assets/footer.js"></script>
+        <script>
+      // init values
+      const dataDisplay = document.getElementById("displayData");
+      document.addEventListener("DOMContentLoaded", (event) => {
+        getDataFromGithub();
+      });
+      // get star data for the repo hpware/sch_c and store it in the display HTML component "dataDisplay"
+      async function getDataFromGithub() {
+        const req = await fetch("https://api.github.com/repos/hpware/sch_c");
+        const res = await req.json();
+        dataDisplay.innerHTML = JSON.stringify(res);
       }
-    };
-    async function getDataFromGithub() {
-      const req = await fetch("https://api.github.com/repos/hpware/sch_c");
-      const res = await req.json();
-      dataDisplay.innerHTML = JSON.stringify(res);
-    }
-  </script>
-    </body>
-  </html>
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!--SPA by yh-->
+<html>
+  <head>
+    <title>slipped into a 404</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  </head>
+  <body>
+        <noscript>Sorry, but this website requires you to turn on javascript in order to load the CSS, animations and content.</noscript>
+    <div
+      class="min-h-12 fixed z-50 inset-x-0 flex flex-row justify-between text-center border transition-all duration-300 z-50"
+      id="navbar"
+    >
+      <div id="nav_title">
+        <span class="p-1">Default Text</span>
+      </div>
+      <div id="nav_links">
+        <a href="https://github.com/hpware/sch_c" class="p-1">Source code</a>
+      </div>
+    </div>
+    <div class="pt-12 min-h-screen">
+      <div class="flex flex-col absolute inset-0 justify-center text-center">
+        <span class="text-4xl">Ah snap! You have landed at area 404!</span>
+        <span class="text-lg"
+          >You should be
+          <a
+            href="/"
+            class="text-blue-400 hover:text-blue-600 transition-all duration-300"
+            >here</a
+          >
+          instead.</span
+        >
+      </div>
+    </div>
+    <footer id="footer" class="grid"></footer>
+    <!--js-->
+    <!--providing navbar js-->
+    <script src="/assets/navbar.js"></script>
+    <!--providing the footer data-->
+    <script src="/assets/footer.js"></script>
+  </body>
+</html>
