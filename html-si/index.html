@@ -1,9 +1,9 @@
-<!--SPA by yh-->
+<!--SPA-->
 <html lang="zh-tw">
   <head>
     <!--seo-->
-    <title></title>
-    <meta name="application-name" content="">
+    <title>Default title</title>
+    <meta name="application-name" content="" />
     <meta name="description" content="" />
     <meta http-equiv="author" content="yh" />
     <meta name="robots" content="max-image-preview:large" />
@@ -17,84 +17,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import CSS & Animation libs-->
     <script src="https://cdn.tailwindcss.com/"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <script src="/assets/redirect_ie.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
-    <noscript>Sorry, but this website requires you to turn on javascript in order to load the CSS, animations and content.</noscript>
+    <noscript
+      >Sorry, but this website requires you to turn on javascript in order to
+      load the CSS, animations and content.</noscript
+    >
     <div
       class="min-h-12 fixed z-50 inset-x-0 flex flex-row justify-between text-center border transition-all duration-300 z-50"
       id="navbar"
     >
-      <div id="nav_title">
-        <span class="p-1">Default Text</span>
+      <div class="flex">
+        
+        <span class="p-2" id="nav_title">Default Text</span>
       </div>
-      <div id="nav_links">
-        <a href="https://github.com/hpware/sch_c" class="p-1">Source code</a>
+      <div id="nav_links" class="flex">
+        <a href="https://github.com/hpware/sch_c" class="p-2">Source code</a>
       </div>
     </div>
-    <div class="pt-12 min-h-screen">
-      <div class="absolute inset-0 justify-center text-center min-h-screen flex flex-col">
-        <span class="text-4xl text-bold">Hi!</span>
-      </div>
-      <div class="min-h-screen"></div>
-      <div id="displayData"></div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-      <div>Hi</div>
-
-    </div>
+    <div class="pt-12 min-h-screen" id="page_content"></div>
     <footer id="footer" class="grid"></footer>
-    <!--js-->
-        <!--providing navbar js-->
-    <script src="/assets/navbar.js"></script>
-    <!--providing the footer data-->
-    <script src="/assets/footer.js"></script>
-      <script>
+    <script>
       // init values
       const dataDisplay = document.getElementById("displayData");
       document.addEventListener("DOMContentLoaded", (event) => {
-        getDataFromGithub();
+        //getDataFromGithub();
       });
       // get star data for the repo hpware/sch_c and store it in the display HTML component "dataDisplay"
       async function getDataFromGithub() {
         const req = await fetch("https://api.github.com/repos/hpware/sch_c");
         const res = await req.json();
-        dataDisplay.innerHTML = JSON.stringify(res);
+        //dataDisplay.innerHTML = JSON.stringify(res);
       }
     </script>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="/assets/navbar.js"></script>
+  <script src="/assets/redirect_ie.js"></script>
+  <script src="/assets/metadata.js"></script>  <!--stuff & html-->
+  <script src="/assets/page_content.js"></script>
 </html>
