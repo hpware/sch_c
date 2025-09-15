@@ -1,0 +1,38 @@
+#!/bin/zsh
+
+# Build script for C++ files using clang++, with arguments and -f=<filename> option
+
+SRC_FILE=""
+OUT_FILE=""
+
+for arg in "$@"; do
+  case $arg in
+    -f=*)
+      SRC_FILE="code/${arg#-f=}.cpp"
+      ;;
+    *)
+      # ignore other args for now
+      ;;
+  esac
+done
+
+# Fallback to positional or default
+if [ -z "$SRC_FILE" ]; then
+  echo "No file"
+  exit 1;
+fi
+OUT_FILE="${2:-dist/$(basename "$SRC_FILE" .cpp)}"
+DIST_DIR="$(dirname "$OUT_FILE")"
+
+mkdir -p "$DIST_DIR"
+clang++ -fcolor-diagnostics -fansi-escape-codes -g "$SRC_FILE" -o "$OUT_FILE"
+
+if [ $? -eq 0 ]; then
+  echo "Build succeeded: $OUT_FILE"
+else
+  echo "Build failed"
+  exit 1
+fi
+
+chmod +x "$OUT_FILE"
+"$OUT_FILE"
