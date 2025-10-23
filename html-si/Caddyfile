@@ -1,5 +1,5 @@
 :9280 {
-    root * /Users/howard/code_base/sch_c/html_code
+    root * /Users/howard/code_base/sch_c/html-si
     file_server browse
     handle_errors {
         rewrite * /404.html

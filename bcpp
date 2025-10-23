@@ -25,7 +25,7 @@ OUT_FILE="${2:-dist/$(basename "$SRC_FILE" .cpp)}"
 DIST_DIR="$(dirname "$OUT_FILE")"
 
 mkdir -p "$DIST_DIR"
-clang++ -stdlib=libc++ -lc++ -fcolor-diagnostics -fansi-escape-codes -g "$SRC_FILE" -o "$OUT_FILE"
+clang++ -stdlib=libc++ -lncurses -lc++ -fcolor-diagnostics -fansi-escape-codes -g "$SRC_FILE" -o "$OUT_FILE"
 
 if [ $? -eq 0 ]; then
   echo "Build succeeded: $OUT_FILE"
