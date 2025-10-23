@@ -44,6 +44,5 @@ int main(int argc, char** argv) {
             }
         }
     }
-    endwin();  // Clean up ncurses
     return 0;
 }
