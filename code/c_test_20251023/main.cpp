@@ -1,14 +1,10 @@
 #include <iostream>
-#include <ncurses.h>
+#include <conio.h>
 using namespace std;
 
 bool loopStatus;
 int ch;
 int main(int argc, char** argv) {
-    initscr();  // Initialize ncurses
-    noecho();   // Don't echo pressed keys
-    cbreak();   // Disable line buffering
-
 
     loopStatus = true;
 
@@ -26,6 +22,5 @@ int main(int argc, char** argv) {
             }
         }
     }
-    endwin();  // Clean up ncurses
     return 0;
 }
