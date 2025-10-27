@@ -1,0 +1,34 @@
+#!/bin/zsh
+
+
+# Build script for C files using clang, with arguments and -f=<filename> option
+
+SRC_FILE=""
+OUT_FILE=""
+
+for arg in "$@"; do
+  case $arg in
+    -f=*)
+      SRC_FILE="code/${arg#-f=}"
+      ;;
+    *)
+      # ignore other args for now
+      ;;
+  esac
+done
+
+# Fallback to positional or default
+if [ -z "$SRC_FILE" ]; then
+  echo "No folder"
+  exit 1;
+fi
+OUT_FILE="${2:-$HOME/Downloads/$(basename "$SRC_FILE" .c).zip}"
+
+zip -r $OUT_FILE $SRC_FILE
+
+if [ $? -eq 0 ]; then
+  echo "Zipped file: $OUT_FILE"
+else
+  echo "Failed to zip file."
+  exit 1
+fi

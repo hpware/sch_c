@@ -1,3 +1,3 @@
 float evaBMI (float w, float h) {
-	return w/h/h;
+	return h/w/w;
 }
