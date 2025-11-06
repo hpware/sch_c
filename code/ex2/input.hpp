@@ -2,7 +2,7 @@
 using namespace std;
 int getH() {
     cout << "請輸入高度: ";
-    int workingPayFromUser;
+    float workingPayFromUser;
     cin >> workingPayFromUser;
 
     return workingPayFromUser;
