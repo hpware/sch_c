@@ -9,7 +9,7 @@ OUT_FILE=""
 for arg in "$@"; do
   case $arg in
     -f=*)
-      SRC_FILE="code/${arg#-f=}"
+      SRC_FILE="${arg#-f=}"
       ;;
     *)
       # ignore other args for now

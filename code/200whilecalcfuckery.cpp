@@ -11,6 +11,6 @@ int main() {
         folding = folding/2;
         t2 += 1;
     }
-    cout << "Folded " << t2 << "Times" << endl;
+    cout << "折了 " << t2 << " 次" << endl;
     return 0;
 }

@@ -3,6 +3,7 @@ using namespace std;
 
 int total;
 
+// this function is writen by AI
 bool isPrime(int number) {
     if (number <= 1) {
         return false;
