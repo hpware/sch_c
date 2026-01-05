@@ -1,7 +1,9 @@
+// 7~2
 #include <iostream>
 using namespace std;
 
-int folding, t2;
+float folding;
+int t2;
 
 int main() {
     cout << "CM: ";
@@ -12,5 +14,6 @@ int main() {
         t2 += 1;
     }
     cout << "折了 " << t2 << " 次" << endl;
+    cout << "最後長度" << folding << endl;
     return 0;
 }
